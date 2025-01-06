@@ -71,7 +71,7 @@ Push 2 Github/
 - A GitHub account with a repository.
 - A personal access token with `repo` permissions (generate [here](https://github.com/settings/tokens))
 - Basic familiarity with LeetCode and Chrome extensions
-- 
+  
 ---
 
 ## Credits
