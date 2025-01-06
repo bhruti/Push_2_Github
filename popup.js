@@ -96,12 +96,19 @@ function pushToGitHub(username, repo, token) {
   };
 
   const titleXPath = "/html/head/meta[9]";
-  const codeXPath = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[9]/div/div[2]/div[1]/div/div/div[1]/div[2]/div[1]/div[5]";
-  const langXPath = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[9]/div/div[1]/div[1]/div[1]/div/div/div[1]/div/button";
+
+  const codeXPath1 = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[9]/div/div[2]/div[1]/div/div/div[1]/div[2]/div[1]/div[5]";
+  const codeXPath2 = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[2]/div[1]/div/div/div[1]/div[2]/div[1]/div[5]";
+ 
+  const langXPath1 = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[9]/div/div[1]/div[1]/div[1]/div/div/div[1]/div/button";
+  const langXPath2 = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[1]/div[1]/div/div/div[1]/div/button";
 
   const metaElement = getXPathElement(titleXPath);
-  const codeElement = getXPathElement(codeXPath);
-  const langElement = getXPathElement(langXPath);
+  const codeElement1 = getXPathElement(codeXPath1);
+  const codeElement2 = getXPathElement(codeXPath2);
+
+  const langElement1 = getXPathElement(langXPath1);
+  const langElement2 = getXPathElement(langXPath2);
 
   const titleContent = metaElement?.getAttribute("content") || "Title not found";
   const questionMarkIndex = titleContent.indexOf("?");
@@ -112,8 +119,8 @@ function pushToGitHub(username, repo, token) {
       : "Title extraction failed";
 
   const question = dashIndex !== -1 ? titleContent.substring(dashIndex + 1).trim() : "Question not found";
-  const code = codeElement?.innerText.trim() || "Code not found";
-  const language = langElement?.innerText.trim() || "Language unknown";
+  const code = codeElement1?.innerText.trim() || codeElement2?.innerText.trim() || "Code not found";
+  const language = langElement1?.innerText.trim() || langElement2?.innerText.trim() || "Language unknown";
   const currentURL = window.location.href;
 
   const fileContent = `Title:\n${title}\n\n-------------------------------\n\nQuestion:\n${question}\n\n-------------------------------\n\nLanguage:\n${language}\n\n-------------------------------\n\nCode:\n${code}\n\n-------------------------------\n\nURL:\n${currentURL}`;
