@@ -14,8 +14,8 @@ A browser extension that automates the process of pushing your LeetCode solution
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/leetcode-to-github-extension.git
-   cd leetcode-to-github-extension
+   git clone <repo-link>
+   cd Push_2_Github
    ```
 
 2. **Load the Extension in Chrome**
