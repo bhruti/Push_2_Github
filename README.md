@@ -68,7 +68,7 @@ Push 2 Github/
 
 ## Prerequisites
 
-- A GitHub account
+- A GitHub account with a repository.
 - A personal access token with `repo` permissions (generate [here](https://github.com/settings/tokens))
 - Basic familiarity with LeetCode and Chrome extensions
 - 
