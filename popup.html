@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCode Sync Tool</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="LeetCode Sync Tool" class="logo">
+    <h1>Push 2 GitHub</h1>
+    <p>Push your LeetCode submitted code to GitHub Repository with a single click.</p>
+    <hr>
+    <div id="setup-form">
+      <h2>Setup GitHub Details</h2>
+      <p>*Copy your access token then start filling Username and Repository name. <a href="https://github.com/settings/tokens" target="_blank">Click here for github access token.</a> </p>
+      <label for="username">GitHub Username:</label>
+      <input type="text" id="username" placeholder="Enter GitHub Username">
+      <label for="repo">Repository Name:</label>
+      <input type="text" id="repo" placeholder="Enter Repository Name">
+      <label for="token">Access Token:</label>
+      <input type="password" id="token" placeholder="Enter Personal Access Token">
+      <button id="save-details">SAVE</button>
+    </div>
+    <div id="main-action" style="display: none;">
+      <button id="sync-btn">PUSH</button>
+      <footer>
+        <p>
+          Developed with Love ♥<br><br><a href="https://github.com/bhruti/Push_2_Github" target="_blank">How to use?</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
